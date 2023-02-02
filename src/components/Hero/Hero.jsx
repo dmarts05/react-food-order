@@ -3,7 +3,7 @@ import foodImg from '../../assets/food.webp';
 
 export default function Hero() {
   return (
-    <header className='flex items-center justify-center'>
+    <header className='flex items-center justify-center text-white'>
       <img
         src={foodImg}
         className='pointer-events-none h-96 w-full select-none object-cover brightness-90 filter'
@@ -20,7 +20,7 @@ export default function Hero() {
           and enjoy a delicious lunch or dinner at home
         </p>
         <p>
-          All our meals are cooked with igh-quality ingredients, just-in.time
+          All our meals are cooked with igh-quality ingredients, just-in-time
           and of course by experienced chefs!
         </p>
       </Card>
