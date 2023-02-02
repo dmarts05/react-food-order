@@ -8,7 +8,7 @@ export default function Meal(props) {
         <p className='italic'>{props.description}</p>
         <span className='font-semibold text-red-900'>${props.price}</span>
       </div>
-      <MealForm />
+      <MealForm id={props.id} />
     </div>
   );
 }

@@ -1,6 +1,13 @@
-export default function MealForm() {
+export default function MealForm(props) {
+  const submitMealHandler = e => {
+    e.preventDefault();
+  };
+
   return (
-    <form className='flex flex-col items-center gap-3'>
+    <form
+      onSubmit={submitMealHandler}
+      className='flex flex-col items-center gap-3'
+    >
       <div className='flex items-center justify-center gap-3'>
         <label htmlFor='amount' className='font-semibold'>
           Amount

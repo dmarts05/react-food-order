@@ -1,3 +1,4 @@
+import { CartMealsContextProvider } from '../../store/cart-meals-context';
 import Cart from './Cart';
 
 export default function Navbar() {
@@ -6,7 +7,9 @@ export default function Navbar() {
       <h1 className='select-none text-2xl font-semibold sm:text-3xl'>
         ReactMeals
       </h1>
-      <Cart />
+      <CartMealsContextProvider>
+        <Cart />
+      </CartMealsContextProvider>
     </nav>
   );
 }
