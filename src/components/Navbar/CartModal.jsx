@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import CartMealsContext from '../../store/cart-meals-context';
 import Card from '../UI/Card';
@@ -15,6 +15,15 @@ const Backdrop = props => {
 
 const ModalOverlay = props => {
   const cartMealsCtx = useContext(CartMealsContext);
+  const [orderAvailable, setOrderAvailable] = useState(false);
+
+  useEffect(() => {
+    if (cartMealsCtx.cartMeals.length > 0) {
+      setOrderAvailable(true);
+    } else {
+      setOrderAvailable(false);
+    }
+  }, [cartMealsCtx.cartMeals]);
 
   const getTotalPriceCart = () =>
     cartMealsCtx.cartMeals
@@ -54,7 +63,8 @@ const ModalOverlay = props => {
         </button>
         <button
           onClick={orderMealsHandler}
-          className='select-none rounded-full border-2 border-red-900 bg-red-900 px-6 py-1 font-semibold text-white transition-colors duration-200 hover:border-red-800 hover:bg-red-800'
+          className='select-none rounded-full border-2 border-red-900 bg-red-900 px-6 py-1 font-semibold text-white transition-colors duration-200 hover:border-red-800 hover:bg-red-800 disabled:border-zinc-400 disabled:bg-zinc-400'
+          disabled={!orderAvailable}
         >
           Order
         </button>
