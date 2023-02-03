@@ -33,8 +33,30 @@ export const cartMealsReducer = (state, action) => {
 
       return newState;
     }
-    case 'REMOVE_MEAL':
-      return state;
+    case 'REMOVE_MEAL': {
+      let newState = [...state];
+      const removedMealIndexCart = newState.findIndex(
+        meal => meal.id === action.id
+      );
+
+      if (removedMealIndexCart !== -1) {
+        let removedMeal = newState[removedMealIndexCart];
+
+        if (removedMeal.count > action.amount) {
+          // Remove only the specified amount from the cart
+          removedMeal = {
+            ...removedMeal,
+            count: removedMeal.count - action.amount,
+          };
+          newState[removedMealIndexCart] = removedMeal;
+        } else {
+          // Fully remove the meal from the cart
+          newState = newState.filter(meal => meal.id !== removedMeal.id);
+        }
+      }
+
+      return newState;
+    }
     default:
       return state;
   }
