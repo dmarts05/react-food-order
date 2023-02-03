@@ -5,6 +5,7 @@ const CartMealsContext = React.createContext({
   totalPrice: 0,
   onAddMeal: () => {},
   onRemoveMeal: () => {},
+  onOrderMeals: () => {},
 });
 
 export default CartMealsContext;

@@ -5,6 +5,7 @@ export const INITIAL_CART_STATE = [];
 export const CART_ACTION_TYPES = {
   ADD_MEAL: 'ADD_MEAL',
   REMOVE_MEAL: 'REMOVE_MEAL',
+  ORDER_MEALS: 'ORDER_MEALS',
 };
 
 export const cartMealsReducer = (state, action) => {
@@ -57,6 +58,8 @@ export const cartMealsReducer = (state, action) => {
 
       return newState;
     }
+    case 'ORDER_MEALS':
+      return INITIAL_CART_STATE;
     default:
       return state;
   }

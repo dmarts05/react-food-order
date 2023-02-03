@@ -20,12 +20,17 @@ const CartMealsContextProvider = props => {
     dispatchCartMeals({ type: CART_ACTION_TYPES.REMOVE_MEAL, id, amount });
   };
 
+  const orderMealsHandler = () => {
+    dispatchCartMeals({ type: CART_ACTION_TYPES.ORDER_MEALS });
+  };
+
   return (
     <CartMealsContext.Provider
       value={{
         cartMeals: cartMealsState,
         onAddMeal: addMealHandler,
         onRemoveMeal: removeMealHandler,
+        onOrderMeals: orderMealsHandler,
       }}
     >
       {props.children}
