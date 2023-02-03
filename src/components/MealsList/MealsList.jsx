@@ -1,7 +1,7 @@
 import Card from '../UI/Card';
 import Meal from './Meal';
 
-import { meals } from '../../store/meals';
+import meals from '../../store/meals';
 
 export default function MealsList() {
   return (

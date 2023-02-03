@@ -1,12 +1,12 @@
 import { FaShoppingCart } from 'react-icons/fa';
 import { useContext } from 'react';
-import { CartMealsContext } from '../../store/cart-meals-context';
+import CartMealsContext from '../../store/cart-meals-context';
 // import CartModal from './CartModal';
 
 export default function Cart() {
   const cartMealsCtx = useContext(CartMealsContext);
 
-  const getAmountOfMealsInCart = () =>
+  const getAmountMealsCart = () =>
     cartMealsCtx.cartMeals.reduce(
       (amount, currentMeal) => amount + currentMeal.count,
       0
@@ -18,7 +18,7 @@ export default function Cart() {
         <FaShoppingCart className='text-lg' />
         <span className='font-semibold'>Your Cart</span>
         <div className='w-10 rounded-full bg-red-700 text-center font-semibold'>
-          {getAmountOfMealsInCart()}
+          {getAmountMealsCart()}
         </div>
       </div>
       {/* <CartModal /> */}

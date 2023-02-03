@@ -1,4 +1,4 @@
-export const meals = [
+const meals = [
   {
     id: 0,
     title: 'Sushi',
@@ -12,3 +12,5 @@ export const meals = [
     price: 12.99,
   },
 ];
+
+export default meals;

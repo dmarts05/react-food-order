@@ -1,4 +1,4 @@
-import { CartMealsContextProvider } from './store/cart-meals-context';
+import CartMealsContextProvider from './store/CartMealsContextProvider';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import MealsList from './components/MealsList/MealsList';

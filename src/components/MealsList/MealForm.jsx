@@ -1,5 +1,5 @@
 import { useContext, useRef } from 'react';
-import { CartMealsContext } from '../../store/cart-meals-context';
+import CartMealsContext from '../../store/cart-meals-context';
 
 export default function MealForm(props) {
   const cartMealsCtx = useContext(CartMealsContext);
@@ -8,7 +8,7 @@ export default function MealForm(props) {
   const submitMealHandler = e => {
     e.preventDefault();
 
-    cartMealsCtx.addMealToCart(props.id, +amount.current.value);
+    cartMealsCtx.onAddMeal(props.id, +amount.current.value);
   };
 
   return (
