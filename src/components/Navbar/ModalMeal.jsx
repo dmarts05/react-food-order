@@ -15,7 +15,7 @@ export default function ModalMeal(props) {
           </span>
         </div>
       </div>
-      <div className='grid grid-flow-col place-content-center gap-3'>
+      <div className='grid place-content-center gap-3 sm:grid-flow-col'>
         <button
           onClick={() => {
             cartMealsCtx.onRemoveMeal(props.id, 1);

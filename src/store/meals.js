@@ -7,9 +7,21 @@ const meals = [
   },
   {
     id: 1,
+    title: 'Schnitzel',
+    description: 'A german specialty!',
+    price: 16.5,
+  },
+  {
+    id: 2,
     title: 'Barbecue Burger',
     description: 'American, raw and meaty',
     price: 12.99,
+  },
+  {
+    id: 3,
+    title: 'Green Bowl',
+    description: 'Healthy and... green!',
+    price: 18.99,
   },
 ];
 

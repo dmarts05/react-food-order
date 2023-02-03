@@ -47,7 +47,7 @@ const ModalOverlay = props => {
       </div>
       <div
         onClick={props.onDisableCartModal}
-        className='flex items-center justify-end gap-3'
+        className='flex flex-wrap items-center justify-end gap-3'
       >
         <button className='select-none rounded-full border-2 border-red-900 bg-white px-6 py-1 font-semibold text-red-900 transition-colors duration-200 hover:bg-red-900 hover:text-white'>
           Close
