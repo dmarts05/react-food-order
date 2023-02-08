@@ -1,5 +1,3 @@
-import meals from './meals';
-
 export const INITIAL_CART_STATE = [];
 
 export const CART_ACTION_TYPES = {
@@ -12,7 +10,7 @@ export const cartMealsReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_MEAL': {
       let newState = [...state];
-      let newMeal = meals.find(meal => meal.id === action.id);
+      let newMeal = action.meals.find(meal => meal.id === action.id);
 
       if (newMeal) {
         newMeal = { ...newMeal, count: action.amount };
