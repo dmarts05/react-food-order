@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import CartMealsContext from '../../store/cart-meals-context';
 import Card from '../UI/Card';
 import ModalMeal from './ModalMeal';
+import useHttp from '../../hooks/use-http';
 
 const Backdrop = props => {
   return (
@@ -14,6 +15,8 @@ const Backdrop = props => {
 };
 
 const ModalOverlay = props => {
+  const { sendRequest } = useHttp();
+
   const cartMealsCtx = useContext(CartMealsContext);
   const [orderAvailable, setOrderAvailable] = useState(false);
 
@@ -35,6 +38,15 @@ const ModalOverlay = props => {
       .toFixed(2);
 
   const orderMealsHandler = () => {
+    sendRequest({
+      url: 'https://react-test-52b42-default-rtdb.europe-west1.firebasedatabase.app/orders.json',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: { ...cartMealsCtx.cartMeals },
+    });
+
     cartMealsCtx.onOrderMeals();
     props.onDisableCartModal();
   };
